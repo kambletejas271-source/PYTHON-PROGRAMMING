@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 23 10:53:36 2026
+
+@author: tejas kamble
+"""
+
+# Taking list input from the user
+n = int(input("Enter number of products: "))
+prices = []
+
+for i in range(n):
+    num = int(input(f"Enter price of product {i+1}: "))
+    prices.append(num)
+
+# Calculating total bill
+total = sum(prices)
+
+print("Product Prices:", prices)
+print("Total Bill:", total)
