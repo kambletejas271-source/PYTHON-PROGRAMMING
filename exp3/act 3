@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 23 10:48:31 2026
+
+@author: tejas kamble
+"""
+
+principal=float(input("Enter principal amount:"))
+monthlyinterest=float(input("Enter monthly interest rate (in %_):"))
+year=float(input("enter loan tenure (in years):"))
+
+months = year * 12
+monthlyinterest = monthlyinterest / 100
+
+EMI=(principal * monthlyinterest * (1 + monthlyinterest) * months) / ((1 + monthlyinterest) * months - 1)
+print("Your EMI is:", round(EMI, 2)
