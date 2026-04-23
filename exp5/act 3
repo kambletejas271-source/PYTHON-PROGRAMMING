@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 23 11:11:41 2026
+
+@author: tejas kamble
+"""
+
+inventory = {
+    "Rice": 50,
+    "Sugar": 30,
+    "Oil": 20
+}
+
+
+print("Current Inventory:")
+for item, quantity in inventory.items():
+    print(item, ":", quantity)
+
+
+item_name = input("\nEnter item name to add: ")
+item_quantity = int(input("Enter quantity to add: "))
+
+
+if item_name in inventory:
+    inventory[item_name] += item_quantity
+else:
+    inventory[item_name] = item_quantity
+
+
+print("\nUpdated Inventory:")
+for item, quantity in inventory.items():
+    print(item, ":", quantity)
