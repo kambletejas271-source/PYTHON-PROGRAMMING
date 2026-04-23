@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 23 10:47:32 2026
+
+@author: tejas kamble
+"""
+
+# Input from user
+copies = int(input("Enter number of receipt copies: "))
+items = int(input("Enter number of items in each receipt: "))
+
+# Outer loop for receipt copies
+for copy in range(1, copies + 1):
+    print("\nReceipt Copy:", copy)
+    print("----------------------")
+    
+    # Inner loop for items in each receipt
+    for item in range(1, items + 1):
+        print("Item Number:", item)
+    
+    print("----------------------")
+
+print("\nAll receipts printed successfully!")
