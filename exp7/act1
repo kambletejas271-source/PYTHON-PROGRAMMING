@@ -1,0 +1,59 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 30 10:51:28 2026
+
+@author: tejas kamble
+"""
+
+class BankAccount:
+    def _init_(self, account_holder, account_number, balance=0):
+        self.account_holder = account_holder
+        self.account_number = account_number
+        self.balance = balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            print(f"Deposited: {amount}")
+        else:
+            print("Invalid deposit amount")
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("Insufficient balance")
+        elif amount <= 0:
+            print("Invalid withdrawal amount")
+        else:
+            self.balance -= amount
+            print(f"Withdrawn: {amount}")
+
+    def display_balance(self):
+        print(f"Account Holder: {self.account_holder}")
+        print(f"Account Number: {self.account_number}")
+        print(f"Current Balance: {self.balance}")
+
+
+# Example usage
+name = input("Enter account holder name: ")
+acc_no = input("Enter account number: ")
+initial_balance = float(input("Enter initial balance: "))
+
+account = BankAccount(name, acc_no, initial_balance)
+
+while True:
+    print("\n1. Deposit\n2. Withdraw\n3. Check Balance\n4. Exit")
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        amt = float(input("Enter amount to deposit: "))
+        account.deposit(amt)
+    elif choice == "2":
+        amt = float(input("Enter amount to withdraw: "))
+        account.withdraw(amt)
+    elif choice == "3":
+        account.display_balance()
+    elif choice == "4":
+        print("Thank you!")
+        break
+    else:
+        print("Invalid choice")
