@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 30 10:53:28 2026
+
+@author: tejas kamble
+"""
+
+class Employee:
+    def _init_(self, name, emp_id, basic_salary, bonus_percent):
+        self.name = name
+        self.emp_id = emp_id
+        self.basic_salary = basic_salary
+        self.bonus_percent = bonus_percent
+
+    def calculate_total_salary(self):
+        bonus = (self.bonus_percent / 100) * self.basic_salary
+        total_salary = self.basic_salary + bonus
+        return total_salary
+
+    def display_details(self):
+        print(f"Employee Name: {self.name}")
+        print(f"Employee ID: {self.emp_id}")
+        print(f"Basic Salary: {self.basic_salary}")
+        print(f"Bonus (%): {self.bonus_percent}")
+        print(f"Total Salary (with bonus): {self.calculate_total_salary()}")
+
+
+# Example usage
+name = input("Enter employee name: ")
+emp_id = input("Enter employee ID: ")
+basic_salary = float(input("Enter basic salary: "))
+bonus_percent = float(input("Enter bonus percentage: "))
+
+emp = Employee(name, emp_id, basic_salary, bonus_percent)
+
+print("\nEmployee Details:")
+emp.display_details()
