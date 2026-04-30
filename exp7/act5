@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 30 10:54:48 2026
+
+@author: tejas kamble
+"""
+
+class Vehicle:
+    def _init_(self, brand, model, fuel_type, distance_travelled, fuel_used):
+        self.brand = brand
+        self.model = model
+        self.fuel_type = fuel_type
+        self.distance_travelled = distance_travelled
+        self.fuel_used = fuel_used
+
+    def calculate_fuel_efficiency(self):
+        if self.fuel_used > 0:
+            efficiency = self.distance_travelled / self.fuel_used
+            return efficiency
+        else:
+            return 0
+
+    def display_details(self):
+        print(f"Brand: {self.brand}")
+        print(f"Model: {self.model}")
+        print(f"Fuel Type: {self.fuel_type}")
+        print(f"Distance Travelled: {self.distance_travelled} km")
+        print(f"Fuel Used: {self.fuel_used} liters")
+        print(f"Fuel Efficiency: {self.calculate_fuel_efficiency()} km/l")
+
+
+# Example usage
+brand = input("Enter vehicle brand: ")
+model = input("Enter vehicle model: ")
+fuel_type = input("Enter fuel type (Petrol/Diesel): ")
+distance = float(input("Enter distance travelled (in km): "))
+fuel = float(input("Enter fuel used (in liters): "))
+
+vehicle = Vehicle(brand, model, fuel_type, distance, fuel)
+
+print("\nVehicle Details:")
+vehicle.display_details()
