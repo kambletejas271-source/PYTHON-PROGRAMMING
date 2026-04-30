@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 30 10:44:27 2026
+
+@author: tejas kamble
+"""
+
+source_file = "source.txt"
+with open(source_file, "w") as file:
+    file.write("Backup Data:\n")
+    file.write("1. User data\n")
+    file.write("2. System configuration\n")
+    file.write("3. Application logs\n")
+    file.write("4. Database records\n")
+
+print(f"Data written to {source_file} successfully.\n")
+
+
+print("Reading source file content:")
+with open(source_file, "r") as file:
+    content = file.read()
+    print(content)
+
+
+backup_file = "backup.txt"
+with open(source_file, "r") as src:
+    with open(backup_file, "w") as dest:
+        dest.write(src.read())
+
+print(f"Data copied to {backup_file} successfully.\n")
+
+
+print("Reading backup file content:")
+with open(backup_file, "r") as file:
+    print(file.read())
